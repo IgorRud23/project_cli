@@ -1,9 +1,10 @@
 #require "project_cli/version"
-require_relative './project_cli/version'
-require_relative './project_cli/cli'
-
 require 'pry'
 require 'nokogiri'
+require 'open-uri'
+require_relative './project_cli/version'
+require_relative './project_cli/cli'
+require_relative './project_cli/scraper'
 
 
 module ProjectCli

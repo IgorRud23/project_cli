@@ -5,6 +5,7 @@ require 'open-uri'
 require_relative './project_cli/version'
 require_relative './project_cli/cli'
 require_relative './project_cli/scraper'
+require_relative './project_cli/site'
 
 
 module ProjectCli

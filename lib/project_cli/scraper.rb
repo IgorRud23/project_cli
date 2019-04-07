@@ -4,5 +4,6 @@ class Scraper
   doc = Nokogiri::HTML(html)
   doc.css("div.comp.article-content").each do |site|
   binding.pry
+end 
 end
 end 

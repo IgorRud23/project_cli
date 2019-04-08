@@ -1,5 +1,0 @@
-class Site 
-  
-  
-  
-end 

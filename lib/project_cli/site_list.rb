@@ -5,7 +5,6 @@ class SiteList
   
 def initialize(heading)
   @heading = heading
-  
   @@all << self 
 end 
 

@@ -5,8 +5,8 @@ class Scraper
   doc.css("div#list-sc-item_1-0.comp.mntl-sc-list-item.list-sc-item.mntl-block").each do |site|
 binding.pry 
 site_heading = site.css("a.mntl-sc-block-heading__link").text 
-about_about_one = site.css("div#mntl-sc-block_2-0-2").text.strip
-about_about_two = 
-end 
+info_about_one = site.css("div#mntl-sc-block_2-0-2").text.strip
+info_about_two = site.css("div#mntl-sc-block_2-0-3").text.strip
+end
 end
 end 

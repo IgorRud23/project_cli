@@ -1,6 +1,9 @@
+
+
+
 class Scraper 
   
-  def scrape_page
+  def scrape_page ()
     html = open("https://www.lifewire.com/cool-websites-to-look-at-when-bored-3486362")
   doc = Nokogiri::HTML(html)
   
@@ -9,15 +12,11 @@ class Scraper
   # list = doc.at("#list-sc_1-0")
   # list.search("div").each do |div|
   #   listOfTitles = div.search('h3').map { |name| name.text }
-   
-   
   # doc.css("#list-sc_1-0").css("div").css("h3")each do |el|
-    
   # doc.css("#list-sc_1-0 div h3")each do |el|
   
-  titles = doc.css("h3").children.map { |name| name.text }
-  
-
+  titles = doc.css("h3").children.map { |name| name.text}
+  normalize = titles.select{ |title|  title.length > 1 }
 
   binding.pry
 # info_one = site.css("div#mntl-sc-block_2-0-2").text.strip

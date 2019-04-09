@@ -1,17 +1,13 @@
 class CLI 
   
-  # def start 
-  #   menu 
-  #   puts "Welcome"
-     
-  #   Scraper.new.scrape_page
-   
-  # end 
+  def start 
+  puts "Welcome"
+  Scraper.new.scrape_page
+  menu 
+  end 
   
   def menu
-    Scraper.new.scrape_page
-    SiteList.all.each.with_index(1) do |site_name, index|
-      puts "#{index}. #{site_name.heading}"
+    x = Hash[(0...SiteList.headingArray.size).zip SiteList.headingArray]
     end 
   end 
   

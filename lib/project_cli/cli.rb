@@ -7,8 +7,8 @@ class CLI
   end 
   
   def menu
-    x = Hash[(0...SiteList.headingArray.size).zip SiteList.headingArray]
-    end 
+    #x = Hash[(0...SiteList.headingArray.size).zip SiteList.headingArray]
+    SiteList.all 
   end 
   
 end 

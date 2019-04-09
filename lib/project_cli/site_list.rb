@@ -1,15 +1,15 @@
 class SiteList 
-  attr_accessor :headingArray
+  attr_accessor :headingList
   
   @@all = []
   
-def initialize(headingArray)
-  @headingArray = headingArray
+def initialize(headingList)
+  @headingList = headingList
   @@all << self 
 end 
 
 def self.all
   @@all
 end
-  binding.pry
+
 end 

@@ -7,8 +7,8 @@ class CLI
   end 
   
   def menu
-    #x = Hash[(0...SiteList.headingArray.size).zip SiteList.headingArray]
-    SiteList.all 
+   navigation = SiteList.all[0] 
+   puts navigation 
   end 
-  
+    #binding.pry
 end 

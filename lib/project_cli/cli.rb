@@ -7,8 +7,9 @@ class CLI
   end 
   
   def menu
-   navigation = SiteList.all[0] 
-   puts navigation 
+   navigation = SiteList.all
+   puts navigation.inspect
+  
   end 
     #binding.pry
 end 

@@ -5,25 +5,25 @@ class Scraper
   doc = Nokogiri::HTML(html)
   
   
-  listOfTitles
-  list = doc.at("#list-sc_1-0")
-  list.search("div").each do |div|
-    listOfTitles = div.search('h3').map { |name| name.text }
+  # listOfTitles
+  # list = doc.at("#list-sc_1-0")
+  # list.search("div").each do |div|
+  #   listOfTitles = div.search('h3').map { |name| name.text }
    
    
   # doc.css("#list-sc_1-0").css("div").css("h3")each do |el|
     
   # doc.css("#list-sc_1-0 div h3")each do |el|
-    
-puts el.text
+  
+  titles = doc.css("h3").children.map { |name| name.text }
+  
 
 
   binding.pry
 # info_one = site.css("div#mntl-sc-block_2-0-2").text.strip
 # info_two = site.css("div#mntl-sc-block_2-0-3").text.strip
 SiteList.new(heading)
-end 
-end
+
 end
 
 end 

@@ -11,9 +11,9 @@ class CLI
   @list 
   @length_of_list
   
-   navigation = SiteList.all
+   site_list = SiteList.all
    
-   navigation.each do |element|
+   site_list.each do |element|
      
      @list = element.headingList
     @length_of_list = element.headingList.length 

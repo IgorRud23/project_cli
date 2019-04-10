@@ -9,14 +9,14 @@ class CLI
   
   def menu
   @array_of_titles 
-  @length_of_list
+  @length_of_titles
   
    class_address = SiteList.all
    
   class_address.each do |element|
      
     @array_of_titles = element.headingList
-    @length_of_list = element.headingList.length 
+    @length_of_titles = element.headingList.length 
     
     
       element.headingList.each_with_index do |name, index|
@@ -30,7 +30,7 @@ end
       # vaidation of select
       
       selected = gets.chomp.to_i
-      if (selected > 0 && selected <= @length_of_list)
+      if (selected > 0 && selected <= @length_of_titles)
         puts @array_of_titles[selected-1]
         puts "is number"
       else 

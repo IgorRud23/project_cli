@@ -5,14 +5,17 @@ class Scraper
   doc = Nokogiri::HTML(html)
   
   headingList = doc.css("h3").children.map { |name| name.text}.select { |title|  title.length > 1 }
+  
+  site_info = doc.css(".comp.mntl-sc-block.mntl-sc-block-html")
 
-
+binding.pry 
 
 
 
 
 
 SiteList.new(headingList)
+
 end
 
 end 

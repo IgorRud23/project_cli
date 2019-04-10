@@ -1,6 +1,3 @@
-
-
-
 class Scraper 
   
   def scrape_page ()
@@ -8,11 +5,14 @@ class Scraper
   doc = Nokogiri::HTML(html)
   
   headingList = doc.css("h3").children.map { |name| name.text}.select { |title|  title.length > 1 }
- 
-# info_one = site.css("div#mntl-sc-block_2-0-2").text.strip
-# info_two = site.css("div#mntl-sc-block_2-0-3").text.strip
-SiteList.new(headingList)
 
+
+
+
+
+
+
+SiteList.new(headingList)
 end
 
 end 

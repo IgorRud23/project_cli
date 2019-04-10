@@ -8,14 +8,14 @@ class CLI
   end 
   
   def menu
-  @list 
+  @array_of_titles 
   @length_of_list
   
-   site_list = SiteList.all
+   class_address = SiteList.all
    
-   site_list.each do |element|
+  class_address.each do |element|
      
-     @list = element.headingList
+    @array_of_titles = element.headingList
     @length_of_list = element.headingList.length 
     
     
@@ -31,7 +31,7 @@ end
       
       selected = gets.chomp.to_i
       if (selected > 0 && selected <= @length_of_list)
-        puts @list[selected-1]
+        puts @array_of_titles[selected-1]
         puts "is number"
       else 
         puts "select different number"

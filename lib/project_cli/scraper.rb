@@ -11,7 +11,7 @@ class Scraper
     final_info = p.text.strip
   @@site_info << final_info 
 
-binding.pry 
+#binding.pry 
 
 
 

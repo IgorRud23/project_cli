@@ -1,5 +1,4 @@
 #require "project_cli/version"
-require 'yaml'
 require 'pry'
 require 'nokogiri'
 require 'open-uri'

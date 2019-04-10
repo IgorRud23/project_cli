@@ -8,9 +8,10 @@ class CLI
   end 
   
   def menu
+  @length_of_list
    navigation = SiteList.all
    navigation.each do |site_name|
-     
+    @length_of_list = site_name.headingList.length 
       site_name.headingList.each_with_index do |name, index|
         puts "#{index+1}. #{name}" 
 end 
@@ -18,18 +19,15 @@ end
   end 
     
     def prompt
-    
       puts "Select topic by number"
       # vaidation of select
       
-      selected = gets.chomp.to_i 
-      if (selected > 0 )
+      selected = gets.chomp.to_i
+      if (selected > 0 && selected <= @length_of_list)
         puts "is number"
       else 
-        puts "not a number"
-      
-       
-      puts selected 
+        puts "select different number"
+    
     end 
     end 
     

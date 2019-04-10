@@ -5,8 +5,10 @@ class Scraper
   doc = Nokogiri::HTML(html)
   
   headingList = doc.css("h3").children.map { |name| name.text}.select { |title|  title.length > 1 }
-  
-  site_info = doc.css(".comp.mntl-sc-block.mntl-sc-block-html")
+  @@site_info = []
+  site_info_try = doc.css(".comp.mntl-sc-block.mntl-sc-block-html").each do |p|
+    final_info = p.text.strip
+  @@site_info << final_info 
 
 binding.pry 
 
@@ -15,7 +17,7 @@ binding.pry
 
 
 SiteList.new(headingList)
-
+end 
 end
 
 end 

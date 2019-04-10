@@ -8,13 +8,18 @@ class CLI
   end 
   
   def menu
-    @list 
+  @list 
   @length_of_list
+  
    navigation = SiteList.all
-   navigation.each do |site_name|
-    @length_of_list = site_name.headingList.length 
-    @list = site_name.headingList
-      site_name.headingList.each_with_index do |name, index|
+   
+   navigation.each do |element|
+     
+     @list = element.headingList
+    @length_of_list = element.headingList.length 
+    
+    
+      element.headingList.each_with_index do |name, index|
         puts "#{index+1}. #{name}" 
 end 
 end 

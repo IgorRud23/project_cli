@@ -10,25 +10,12 @@ class Scraper
   
 
     
-    articleList = doc.css(".list-sc-item").text.split(/\d+\n.*\s\d+/)
+    articleList = doc.css(".list-sc-item").children.map { |element| element }.select { |element| element.name == "div" }.map { |el| el.text }.join.split(/\d+\n.*\s\d+/)
+    
     articleList.shift
     headingList = articleList.map.with_index {|article, index|  {title: headingListFoo[index], article: article}}
 
     
-    
-    
-    #binding.pry 
-    
-    
-#     .children.map { |element| element }.select { |element| element.name == "div" }.map { |el| el.text }.join.split(/\d+\n.*\s\d+/)
-# articleList.shift
-#   articleList.each_with_index do |name, index|
-#         puts "#{index+1}. #{name}" 
-
-
-
-
-
 
 
 

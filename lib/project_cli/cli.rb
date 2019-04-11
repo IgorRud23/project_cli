@@ -19,8 +19,10 @@ class CLI
     @length_of_titles = element.headingList.length 
     
     
-      element.headingList.each_with_index do |name, index|
-        puts "#{index+1}. #{name[:title]}" 
+      element.headingList.each_with_index do |block, index|
+  
+        puts "#{index+1}. #{block[:title]}" 
+        
 end 
 end 
   end 
@@ -31,8 +33,9 @@ end
       
       selected = gets.chomp.to_i
       if (selected > 0 && selected <= @length_of_titles)
-        puts @array_of_titles[selected-1]
-        puts "is number"
+      
+        puts "", @array_of_titles[selected-1][:title], "", @array_of_titles[selected-1][:article].strip, ""
+       
       else 
         puts "select different number"
     

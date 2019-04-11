@@ -6,14 +6,14 @@ class Scraper
   #TODO handle error 
   
   
-  headingListFoo = doc.css("h3").children.map { |name| name.text}.select { |title|  title.length > 1 }
+  headings = doc.css("h3").children.map { |name| name.text}.select { |title|  title.length > 1 }
   
 
     
     articleList = doc.css(".list-sc-item").children.map { |element| element }.select { |element| element.name == "div" }.map { |el| el.text }.join.split(/\d+\n.*\s\d+/)
     
     articleList.shift
-    headingList = articleList.map.with_index {|article, index|  {title: headingListFoo[index], article: article}}
+    headingList = articleList.map.with_index {|article, index|  {title: headings[index], article: article}}
 
     
 

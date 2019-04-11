@@ -6,18 +6,14 @@ class Scraper
   #TODO handle error 
   headingList = doc.css("h3").children.map { |name| name.text}.select { |title|  title.length > 1 }
   
-  @@site_info = []
-  site_info_try = doc.css(".comp.mntl-sc-block.mntl-sc-block-html").map do |p|
-    final_info = p.text.strip
-  @@site_info << final_info 
-
-#binding.pry 
-
-
-
+    articleList = doc.css(".list-sc-item").children.map { |element| element }.select { |element| element.name == "div" }.map { |el| el.text }.join.split(/\d+\n.*\s\d+/)
+articleList.shift
+  articleList.each_with_index do |name, index|
+        puts "#{index+1}. #{name}" 
 
 
 SiteList.new(headingList)
+
 end 
 end
 

@@ -20,7 +20,7 @@ class CLI
     
     
       element.headingList.each_with_index do |name, index|
-        puts "#{index+1}. #{name}" 
+        puts "#{index+1}. #{name[:title]}" 
 end 
 end 
   end 

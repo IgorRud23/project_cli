@@ -8,14 +8,14 @@ class CLI
   end 
   
   def menu
-  @array_of_titles 
+  @array_of_articles 
   @length_of_titles
   
    class_address = SiteList.all
    
   class_address.each do |element|
      
-    @array_of_titles = element.headingList
+    @array_of_articles = element.headingList
     @length_of_titles = element.headingList.length 
     
     
@@ -34,7 +34,7 @@ end
       selected = gets.chomp.to_i
       if (selected > 0 && selected <= @length_of_titles)
       
-        puts "", @array_of_titles[selected-1][:title], "", @array_of_titles[selected-1][:article].strip, ""
+        puts "", @array_of_articles[selected-1][:title], "", @array_of_articles[selected-1][:article].strip, "", @array_of_articles[selected-1][:links], ""
        
       else 
         puts "select different number"

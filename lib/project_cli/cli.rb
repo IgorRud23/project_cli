@@ -1,7 +1,9 @@
 class CLI 
   
   def start 
-  puts "Welcome"
+  puts "==================================", "",
+  "Welcome", "",
+  "==================================", ""
   Scraper.new.scrape_page
   show_list
   prompt
@@ -28,7 +30,7 @@ end
   end 
     
     def prompt
-      puts "Select topic by number"
+      puts "Select topic by number:"
       # vaidation of select
       inputString = ""
       while inputString != "exit"
@@ -46,9 +48,10 @@ end
         puts "To go back to list type list", "",
         "To exit from program type exit"
        
-      else 
-        puts "select different number"
-    
+      elsif (inputString != "exit") 
+        puts "Wrong input. Select number from the list or type exit to close program, type list to go back to the list."
+    else
+      puts "Don't forget to smile 😁"
     end 
     end 
     

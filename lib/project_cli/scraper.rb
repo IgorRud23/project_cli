@@ -18,7 +18,7 @@ class Scraper
     
 
 
-binding.pry 
+#binding.pry 
 
 
 

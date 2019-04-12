@@ -3,11 +3,11 @@ class CLI
   def start 
   puts "Welcome"
   Scraper.new.scrape_page
-  menu 
+  show_list
   prompt
   end 
   
-  def menu
+  def show_list
   @array_of_articles 
   @length_of_titles
   
@@ -30,11 +30,21 @@ end
     def prompt
       puts "Select topic by number"
       # vaidation of select
+      inputString = ""
+      while inputString != "exit"
       
-      selected = gets.chomp.to_i
-      if (selected > 0 && selected <= @length_of_titles)
+      input = gets.chomp 
+      inputString = input.downcase 
+      inputNumber = input.to_i 
       
-        puts "", @array_of_articles[selected-1][:title], "", @array_of_articles[selected-1][:article].strip, "", @array_of_articles[selected-1][:links], ""
+      if inputString == "list"
+        show_list
+        
+        elsif (inputNumber > 0 && inputNumber <= @length_of_titles)
+      
+        puts "", @array_of_articles[inputNumber-1][:title], "", @array_of_articles[inputNumber-1][:article].strip, "", @array_of_articles[inputNumber-1][:links]
+        puts "To go back to list type list", "",
+        "To exit from program type exit"
        
       else 
         puts "select different number"
@@ -42,4 +52,5 @@ end
     end 
     end 
     
+end 
 end 

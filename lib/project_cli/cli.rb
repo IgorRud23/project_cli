@@ -1,9 +1,14 @@
 class CLI 
   
   def start 
-  puts "==================================", "",
-  "Welcome", "",
-  "==================================", ""
+  puts "======================================================", "",
+  "                      hi.",
+  "you bored at the office and you have plenty of time?!", 
+  "           then you in the right place.",
+  "     here we have for you 22 interesting websites.", 
+  "welcome, we hope you'll find something useful for you.",
+  "         go down below to check the list.","",
+  "======================================================", ""
   Scraper.new.scrape_page
   show_list
   prompt
@@ -44,7 +49,8 @@ end
         
         elsif (inputNumber > 0 && inputNumber <= @length_of_titles)
       
-        puts "", @array_of_articles[inputNumber-1][:title], "", @array_of_articles[inputNumber-1][:article].strip, "", @array_of_articles[inputNumber-1][:links]
+        puts "", @array_of_articles[inputNumber-1][:title], "", @array_of_articles[inputNumber-1][:article].strip,
+        "", @array_of_articles[inputNumber-1][:link], ""
         puts "To go back to list type list", "",
         "To exit from program type exit"
        

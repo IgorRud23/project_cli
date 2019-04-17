@@ -54,9 +54,11 @@ class CLI
         "To exit from program type exit"
        
       elsif (inputString != "exit") 
-        puts "Wrong input. Select number from the list or type exit to close program, type list to go back to the list."
+        puts "Wrong input. Select number from the list" 
+        puts "or type exit to close program."
+        puts "Type list to go back to the list."
     else
-      puts "Don't forget to smile 😁"
+      puts "Don't forget to smile =). And have a good day!"
     
       end 
     end 
